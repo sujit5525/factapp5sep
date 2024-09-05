@@ -1,0 +1,79 @@
+<html>
+<head>
+<title> Factorial Finder APP </title>
+<style>
+* { font-size:40px; font-family:Calibri;}
+body{background-color:azure;}
+</style>
+</head>
+
+<body>
+<center>
+<h1>Factorial Finder App</h1>
+<form onsubmit = "find()">
+<input type = "number" id = "num" placeholder="enter integer"/>
+<br/><br/>
+<input type = "submit"  value="M1"/>
+<input type = "submit"  value="M2"/>
+<input type = "submit"  value="M3"/>
+</form>
+<h2 id="msg"/>
+<script>
+function find()
+{
+event.preventDefault();
+let num = document.getElementById("num");
+let msg = document.getElementById("msg");
+ 
+if(num.value==="")
+{
+alert("please enter integer");
+msg.innerHTML="";
+num.focus();
+return;
+}
+
+let n = parseInt(num.value);
+let ans = "";
+let action = document.activeElement.value;
+
+
+if(action==="M1")
+{
+
+let i=1, f=1;
+while(i<=n)
+{
+f=f*i;
+i++
+}
+ans="fact1= "+f;
+msg.innerHTML=ans;
+}
+else if (action==="M2")
+{
+let i=1,f=1;
+do
+{
+f=f*i;
+i++;
+}while(i<=n);
+ans="fact2 =  "+f;
+msg.innerHTML=ans;
+}
+else if (action==="M3")
+{
+let f = 1;
+for(let i=1; i<=n; i++)
+{
+  f = f*i;
+}
+ans="fact3 = "+f;
+msg.innerHTML=ans;
+}
+
+}
+</script>
+</center>
+</body>
+</html>
